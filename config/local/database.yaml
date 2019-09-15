@@ -1,0 +1,3 @@
+DbEngine: mysql
+CrawlerMaster: ranrl:passwd@tcp(127.0.0.1:3306)/zhibi_crawler?charset=utf8
+CrawlerSlave: ranrl:passwd@tcp(127.0.0.1:3306)/zhibi_crawler?charset=utf8

@@ -17,5 +17,9 @@ func GetEngine(keys ...string) *xorm.Engine {
 	if len(keys) == 0 {
 		return Orm["default"]
 	}
-	return Orm[keys[0]]
+	_, ok := Orm[keys[0]]
+	if ok {
+		return Orm[keys[0]]
+	}
+	return Orm["default"]
 }

@@ -2,5 +2,5 @@ package conf
 
 // App generate config
 type App struct {
-	ServerPort string `yaml:"ServerPort"`
+	ServerPort string `yaml:"serverport"`
 }

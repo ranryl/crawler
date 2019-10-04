@@ -4,19 +4,19 @@ import "time"
 
 // Cache struct
 type Cache struct {
-	Master RedisInfo
-	Slave  RedisInfo
+	Master RedisInfo `yaml:"master"`
+	Slave  RedisInfo `yaml:"slave"`
 }
 
 // RedisInfo struct
 type RedisInfo struct {
-	Network         string
-	Address         string
-	Password        string
-	Db              int
-	MaxIdle         int
-	MaxActive       int
-	IdleTimeout     time.Duration
-	MaxConnLifetime time.Duration
-	TimeOut         time.Duration
+	Network         string        `yaml:"network"`
+	Address         string        `yaml:"address"`
+	Password        string        `yaml:"password"`
+	Db              int           `yaml:"db"`
+	MaxIdle         int           `yaml:"maxidle"`
+	MaxActive       int           `yaml:"maxactive"`
+	IdleTimeout     time.Duration `yaml:"idletimeout"`
+	MaxConnLifetime time.Duration `yaml:"maxconnlifetime"`
+	TimeOut         time.Duration `yaml:"timeout"`
 }

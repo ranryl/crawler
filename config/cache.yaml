@@ -1,0 +1,22 @@
+master:
+  network: tcp
+  address: localhost:6379
+  password: ""
+  db: 0
+  maxIdle: 5
+  maxactive: 20
+  idletimeout: 0
+  maxConnlifetime: 0
+  prefix: ""
+  timeout: 20
+slave:
+  network: tcp
+  address: localhost:6379
+  password: ""
+  db: 0
+  maxidle: 5
+  maxactive: 20
+  idletimeout: 0
+  maxConnlifetime: 0
+  prefix: ""
+  timeout: 20

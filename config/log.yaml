@@ -1,0 +1,6 @@
+logprefix: "access"
+timefilename: .%Y%m%d.log
+# 7 * 24 hour
+savemaxage: 168
+# 24 hour
+rotationtime: 24

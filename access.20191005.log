@@ -1,0 +1,2 @@
+{"level":"info","msg":"| 200 |    9.695966ms |             ::1 | GET | /city/getall |","time":"2019-10-05 23:26:30"}
+{"level":"info","msg":"| 200 |    4.508722ms |             ::1 | GET | /city/getall |","time":"2019-10-05 23:26:31"}

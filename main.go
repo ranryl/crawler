@@ -5,6 +5,7 @@ import (
 	"crawler/conf"
 	"crawler/controllers"
 	"crawler/utils"
+	"log"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -40,10 +41,22 @@ func main() {
 	appConf := conf.App{}
 	err = utils.BindYamlConf(&appConf, appFile)
 	utils.PanicError(err)
+	// 加载log配置文件
+	logFile, err := utils.GetFilePath(basePath + "log.yaml")
+	utils.PanicError(err)
+	logConf := conf.Log{}
+	err = utils.BindYamlConf(&logConf, logFile)
+	utils.PanicError(err)
+	curPath, err := utils.GetWdPath()
+	utils.PanicError(err)
 
-	route := gin.Default()
+	route := gin.New()
+	route.Use(utils.GinLogger(curPath, logConf))
 	RegisterRouter(route)
-
+	route.Use(gin.Logger())
+	route.GET("/", func(c *gin.Context) {
+		log.Println("print log")
+	})
 	route.Run(appConf.ServerPort)
 }
 
